@@ -3,11 +3,10 @@ package hrmsSystem.hrms.business.abstracts;
 import hrmsSystem.hrms.core.utilities.results.DataResult;
 import hrmsSystem.hrms.core.utilities.results.Result;
 import hrmsSystem.hrms.entities.concretes.ActivePositions;
-import hrmsSystem.hrms.entities.concretes.Users;
 
 import java.util.List;
 
-public interface UserService {
-    DataResult<List<Users>> getAll();
-
+public interface PositionService {
+    DataResult<List<ActivePositions>> getAll();
+    Result add(ActivePositions activePositions);
 }

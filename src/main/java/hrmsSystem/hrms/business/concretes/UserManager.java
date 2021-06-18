@@ -1,6 +1,8 @@
 package hrmsSystem.hrms.business.concretes;
 
 import hrmsSystem.hrms.business.abstracts.UserService;
+import hrmsSystem.hrms.core.utilities.results.DataResult;
+import hrmsSystem.hrms.core.utilities.results.SuccessDataResult;
 import hrmsSystem.hrms.dataAccess.abstracts.UserDao;
 import hrmsSystem.hrms.entities.concretes.ActivePositions;
 //import hrmsSystem.hrms.entities.concretes.Users;
@@ -21,7 +23,9 @@ public class UserManager implements UserService {
     }
 
     @Override
-    public List<Users> getAll() {
-        return this.userDao.findAll();
+    public DataResult<List<Users>> getAll() {
+        return new SuccessDataResult<>(this.userDao.findAll(),"Data has listed");
+
+
     }
 }

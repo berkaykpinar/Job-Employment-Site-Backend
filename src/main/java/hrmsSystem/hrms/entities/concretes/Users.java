@@ -9,7 +9,7 @@ import javax.persistence.*;
 
 @Entity
 @Data
-@Table(name="users")
+@Table(name = "users")
 @AllArgsConstructor
 @NoArgsConstructor
 @Inheritance(strategy = InheritanceType.JOINED)
@@ -17,17 +17,16 @@ public class Users {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id")
+    @Column(name = "id", unique = true)
     private int id;
 
     @NotNull
-    @Column(name="email",unique = true)
+    @Column(name = "email", unique = true)
     private String email;
 
     @NotNull
-    @Column(name="password")
+    @Column(name = "password")
     private String password;
-
 
 
 }
