@@ -1,12 +1,15 @@
 package hrmsSystem.hrms.entities.concretes;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import org.w3c.dom.stylesheets.LinkStyle;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -15,6 +18,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = false)
 @PrimaryKeyJoinColumn(name = "employer_id",referencedColumnName = "id")
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler","products"})
 public class Employers extends Users{
 
 //    @Id
@@ -35,7 +39,8 @@ public class Employers extends Users{
     @Column(name = "phone_number",unique = true)
     private String phoneNumber;
 
-
+//    @OneToMany(mappedBy = "employers")
+//    private List<JobAdvertisement> jobAdvertisements;
 
 
 }
