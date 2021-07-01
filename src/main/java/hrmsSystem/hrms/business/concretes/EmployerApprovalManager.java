@@ -1,18 +1,15 @@
 package hrmsSystem.hrms.business.concretes;
 
-import hrmsSystem.hrms.business.abstracts.EmailVerificationService;
 import hrmsSystem.hrms.business.abstracts.EmployerApprovalService;
-import hrmsSystem.hrms.business.abstracts.EmployerService;
+import hrmsSystem.hrms.entities.concretes.EmployerApproval;
+import hrmsSystem.hrms.entities.concretes.Employers;
+import hrmsSystem.hrms.entities.concretes.SystemPersonnel;
 import hrmsSystem.hrms.core.utilities.results.DataResult;
-import hrmsSystem.hrms.core.utilities.results.Result;
 import hrmsSystem.hrms.core.utilities.results.SuccessDataResult;
-import hrmsSystem.hrms.core.utilities.results.SuccessResult;
 import hrmsSystem.hrms.dataAccess.abstracts.EmployerApprovalDao;
-import hrmsSystem.hrms.entities.concretes.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
 import java.util.List;
 
 @Service

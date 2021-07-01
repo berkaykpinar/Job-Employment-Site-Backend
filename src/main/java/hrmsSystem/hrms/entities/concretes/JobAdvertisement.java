@@ -7,7 +7,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 
 @Data
 @Entity
@@ -21,9 +20,9 @@ public class JobAdvertisement {
     @Column(name = "ad_id")
     private int adId;
 
-    @NotNull
-    @Column(name = "employer_id")
-    private int employerId;
+//    @NotNull
+//    @Column(name = "employer_id")
+//    private int employerId;
 
     @NotNull
     @Column(name = "city")
@@ -50,7 +49,9 @@ public class JobAdvertisement {
     @Column(name = "is_active")
     private Boolean isActive;
 
-//    @ManyToOne()
-//    @JoinColumn(name = "employer_id")
-//    private Employers employers;
+    @ManyToOne()
+    @JoinColumn(name = "employer_id")
+    private Employers employers;
+
+
 }

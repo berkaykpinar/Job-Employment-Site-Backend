@@ -2,7 +2,6 @@ package hrmsSystem.hrms.business.abstracts;
 
 import hrmsSystem.hrms.core.utilities.results.DataResult;
 import hrmsSystem.hrms.core.utilities.results.Result;
-import hrmsSystem.hrms.dataAccess.abstracts.PersonnelDao;
 import hrmsSystem.hrms.entities.concretes.SystemPersonnel;
 
 import java.util.List;

@@ -4,8 +4,6 @@ import hrmsSystem.hrms.business.abstracts.EmailVerificationService;
 import hrmsSystem.hrms.core.utilities.results.*;
 import hrmsSystem.hrms.dataAccess.abstracts.EmailVerificationDao;
 import hrmsSystem.hrms.entities.concretes.EmailVerification;
-import hrmsSystem.hrms.entities.concretes.SystemPersonnel;
-import hrmsSystem.hrms.entities.concretes.Users;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

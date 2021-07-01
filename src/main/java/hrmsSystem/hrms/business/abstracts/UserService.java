@@ -1,8 +1,6 @@
 package hrmsSystem.hrms.business.abstracts;
 
 import hrmsSystem.hrms.core.utilities.results.DataResult;
-import hrmsSystem.hrms.core.utilities.results.Result;
-import hrmsSystem.hrms.entities.concretes.ActivePositions;
 import hrmsSystem.hrms.entities.concretes.Users;
 
 import java.util.List;

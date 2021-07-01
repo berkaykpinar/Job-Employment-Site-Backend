@@ -6,7 +6,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.w3c.dom.stylesheets.LinkStyle;
 
 import javax.persistence.*;
 import java.util.List;
@@ -18,7 +17,7 @@ import java.util.List;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = false)
 @PrimaryKeyJoinColumn(name = "employer_id",referencedColumnName = "id")
-@JsonIgnoreProperties({"hibernateLazyInitializer","handler","products"})
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler","JobAdvertisement"})
 public class Employers extends Users{
 
 //    @Id
@@ -39,8 +38,8 @@ public class Employers extends Users{
     @Column(name = "phone_number",unique = true)
     private String phoneNumber;
 
-//    @OneToMany(mappedBy = "employers")
-//    private List<JobAdvertisement> jobAdvertisements;
+    @OneToMany(mappedBy = "employers")
+    private List<JobAdvertisement> jobAdvertisements;
 
 
 }

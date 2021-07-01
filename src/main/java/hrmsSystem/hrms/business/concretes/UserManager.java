@@ -4,7 +4,6 @@ import hrmsSystem.hrms.business.abstracts.UserService;
 import hrmsSystem.hrms.core.utilities.results.DataResult;
 import hrmsSystem.hrms.core.utilities.results.SuccessDataResult;
 import hrmsSystem.hrms.dataAccess.abstracts.UserDao;
-import hrmsSystem.hrms.entities.concretes.ActivePositions;
 //import hrmsSystem.hrms.entities.concretes.Users;
 import hrmsSystem.hrms.entities.concretes.Users;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,16 +1,12 @@
 package hrmsSystem.hrms.api.controllers;
 
 import hrmsSystem.hrms.business.abstracts.EmployerService;
-import hrmsSystem.hrms.business.concretes.EmployerManager;
 import hrmsSystem.hrms.core.utilities.results.DataResult;
 import hrmsSystem.hrms.core.utilities.results.Result;
-import hrmsSystem.hrms.core.utilities.results.SuccessDataResult;
-import hrmsSystem.hrms.core.utilities.results.SuccessResult;
 import hrmsSystem.hrms.entities.concretes.Employers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.xml.crypto.Data;
 import java.util.List;
 
 @RestController
