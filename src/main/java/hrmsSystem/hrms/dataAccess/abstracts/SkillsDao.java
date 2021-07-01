@@ -12,4 +12,5 @@ public interface SkillsDao extends JpaRepository<Skills,Integer> {
 
     @Query("from Skills s where s.resume.resumeId=:resumeId")
     List<Skills> findSkillsByResume_ResumeId(int resumeId);
+
 }

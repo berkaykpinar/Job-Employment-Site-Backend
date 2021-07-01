@@ -7,6 +7,7 @@ import hrmsSystem.hrms.core.utilities.results.SuccessDataResult;
 import hrmsSystem.hrms.core.utilities.results.SuccessResult;
 import hrmsSystem.hrms.dataAccess.abstracts.ResumeDao;
 import hrmsSystem.hrms.entities.concretes.Resume;
+import hrmsSystem.hrms.entities.dtos.ResumeWithAllInformationsDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -36,5 +37,10 @@ public class ResumeManager implements ResumeService {
     @Override
     public DataResult<List<Resume>> getResumeByJobSeekerId(int jobSeekerId) {
         return new SuccessDataResult<List<Resume>>(this.resumeDao.findResumeByJobSeekers_Id(jobSeekerId));
+    }
+
+    @Override
+    public DataResult<List<ResumeWithAllInformationsDto>> getResumeWithAllInformations(int jobSeekerId) {
+        return new SuccessDataResult<List<ResumeWithAllInformationsDto>>(this.resumeDao.getResumesByJobSeekers_Id(jobSeekerId));
     }
 }

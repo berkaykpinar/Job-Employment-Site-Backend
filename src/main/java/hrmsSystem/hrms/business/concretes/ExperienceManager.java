@@ -30,6 +30,7 @@ public class ExperienceManager implements ExperienceService {
 
     @Override
     public Result add(Experiences experiences) {
+        experiences.setExperinceYear(experiences.getQuitYear()-experiences.getStartYear());
         this.experiencesDao.save(experiences);
         return new SuccessResult("Languages has been added");
     }

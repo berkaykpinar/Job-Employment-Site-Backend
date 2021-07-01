@@ -21,10 +21,28 @@ public class ResumeWithAllInformationsDto {
     private String gitHubAddress;
     private String linkedinAddress;
     private String coverLetter;
-    private List<Experiences> experiences;
-    private List<Education> educations;
-    private List<Languages> languages;
-    private List<Skills> skills;
+    private String workPlace;
+    private String position;
+    private int startYear;
+    private int quitYear;
+    private int experinceYear;
+    private boolean isContinues;
+    private String schoolName;
+    private String department;
+    private int startYearEdu;
+    private int graduateYear;
+    private boolean isContinuesEdu;
+    private String language;
+    private int languageLevel;
+    private String skillName;
+    private String skillLevel;
+
+ //private List<Experiences> experiences;
+//    private List<Education> educations;
+//    private List<Languages> languages;
+//    private List<Skills> skills;
+
+
 
 
 }
