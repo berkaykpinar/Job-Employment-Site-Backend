@@ -15,7 +15,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @PrimaryKeyJoinColumn(name = "seeker_id",referencedColumnName = "id")
-@JsonIgnoreProperties({"hibernateLazyInitializer","handler","resumes"})
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler","resumes","favorites"})
 public class JobSeekers extends Users{
 
 //    @Id
@@ -39,8 +39,10 @@ public class JobSeekers extends Users{
     @Column(name = "birth_date")
     private String birthDate;
 
-
     @OneToMany(mappedBy = "jobSeekers")
     private List<Resume> resumes;
+
+    @OneToMany(mappedBy = "jobSeekers")
+    private List<Favorites> favorites;
 
 }

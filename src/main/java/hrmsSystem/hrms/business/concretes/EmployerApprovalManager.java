@@ -1,6 +1,8 @@
 package hrmsSystem.hrms.business.concretes;
 
 import hrmsSystem.hrms.business.abstracts.EmployerApprovalService;
+import hrmsSystem.hrms.core.utilities.results.Result;
+import hrmsSystem.hrms.core.utilities.results.SuccessResult;
 import hrmsSystem.hrms.entities.concretes.EmployerApproval;
 import hrmsSystem.hrms.entities.concretes.Employers;
 import hrmsSystem.hrms.entities.concretes.SystemPersonnel;
@@ -27,15 +29,21 @@ public class EmployerApprovalManager implements EmployerApprovalService {
     @Override
     public boolean process(Employers employers) {
         //Bu işlem için database'den rast gele bir personel seçilecek
-        SystemPersonnel systemPersonnel = new SystemPersonnel("Mert","Tuğrul");
-        employerApproval = new EmployerApproval();
-        employerApproval.setCompanyName(employers.getCompanyName());
-        employerApproval.setPersonnelName(systemPersonnel.getFirstName()+" "+systemPersonnel.getLastName());
-        employerApproval.setDate("06/06/2021");
-        employerApproval.setProcessResult(true);
+//        SystemPersonnel systemPersonnel = new SystemPersonnel("Mert","Tuğrul");
+//        employerApproval = new EmployerApproval();
+//        employerApproval.setCompanyName(employers.getCompanyName());
+//        employerApproval.setPersonnelName(systemPersonnel.getFirstName()+" "+systemPersonnel.getLastName());
+//        employerApproval.setDate("06/06/2021");
+//        employerApproval.setProcessResult(true);
         this.employerApprovalDao.save(this.employerApproval);
 
         return true;
+    }
+
+    @Override
+    public Result add(EmployerApproval employerApproval){
+        this.employerApprovalDao.save(employerApproval);
+        return new SuccessResult("Process has been added");
     }
 
     @Override

@@ -9,4 +9,7 @@ import java.util.List;
 public interface JobAdvertisementService {
     DataResult<List<JobAdvertisement>> listByDate();
     Result add(JobAdvertisement jobAdvertisement);
+    DataResult<JobAdvertisement> getByAdvertisementId(int adId);
+    DataResult<List<JobAdvertisement>> listByIsApproved();
+    Result updateStatus(int adId,boolean status);
 }

@@ -41,13 +41,25 @@ public class JobAdvertisement {
     private int positionNum;
 
     @NotNull
-    @JsonFormat(pattern = "dd-MM-yyy")
+    //@JsonFormat(pattern = "dd-MM-yyy")
     @Column(name = "deadline")
     private String deadline;
 
     @NotNull
     @Column(name = "is_active")
     private Boolean isActive;
+
+    @NotNull
+    @Column(name="is_approved")
+    private Boolean isApproved;
+
+    @NotNull
+    @Column(name = "working_type")
+    private String workingType;
+
+    @NotNull
+    @Column(name="working_style")
+    private String workingStyle;
 
     @ManyToOne()
     @JoinColumn(name = "employer_id")

@@ -15,9 +15,9 @@ import java.util.List;
 @Table(name = "employers")
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode(callSuper = false)
+//@EqualsAndHashCode(callSuper = false)
 @PrimaryKeyJoinColumn(name = "employer_id",referencedColumnName = "id")
-@JsonIgnoreProperties({"hibernateLazyInitializer","handler","JobAdvertisement"})
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler","jobAdvertisements"})
 public class Employers extends Users{
 
 //    @Id

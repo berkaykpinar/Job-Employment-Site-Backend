@@ -5,18 +5,16 @@ import hrmsSystem.hrms.business.concretes.JobAdvertisementManager;
 import hrmsSystem.hrms.core.utilities.results.DataResult;
 import hrmsSystem.hrms.core.utilities.results.Result;
 import hrmsSystem.hrms.entities.concretes.JobAdvertisement;
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/jobAdvertisement")
+@CrossOrigin
 public class JobAdvertisementController {
     private JobAdvertisementService jobAdvertisementService;
 
@@ -30,9 +28,26 @@ public class JobAdvertisementController {
         return this.jobAdvertisementService.listByDate();
     }
 
+    @GetMapping("/listByIsApproved")
+    public DataResult<List<JobAdvertisement>> listByIsApproved(){
+        return this.jobAdvertisementService.listByIsApproved();
+    }
+
+    @GetMapping("/getByAdId")
+    public DataResult<JobAdvertisement> getByAdvertisemetnID(int adId){
+
+        return this.jobAdvertisementService.getByAdvertisementId(adId);
+    }
+
+
     @PostMapping("/add")
     public Result add(@RequestBody JobAdvertisement jobAdvertisement){
         return this.jobAdvertisementService.add(jobAdvertisement);
+    }
+
+    @PostMapping("/updateStatus")
+    public Result update(int adId,boolean status){
+        return this.jobAdvertisementService.updateStatus(adId,status);
     }
 
 
