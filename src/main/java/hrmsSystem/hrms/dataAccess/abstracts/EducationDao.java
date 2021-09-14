@@ -9,5 +9,5 @@ import java.util.List;
 public interface EducationDao extends JpaRepository<Education,Integer> {
 
     @Query("from Education e where e.resume.resumeId=:resumeId")
-    List<Education> findEducationByResume_ResumeId(int resumeId);
+    Education findEducationByResume_ResumeId(int resumeId);
 }

@@ -4,6 +4,7 @@ import hrmsSystem.hrms.business.abstracts.CityService;
 import hrmsSystem.hrms.core.utilities.results.DataResult;
 import hrmsSystem.hrms.entities.concretes.Cities;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,6 +12,7 @@ import java.util.List;
 
 @RequestMapping("/city")
 @RestController
+@CrossOrigin
 public class CityController {
     private CityService cityService;
 

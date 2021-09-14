@@ -12,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/resumes")
+@CrossOrigin
 public class ResumeController {
     private ResumeService resumeService;
 
@@ -38,6 +39,10 @@ public class ResumeController {
         return this.resumeService.getResumeWithAllInformations(jobSeekerId);
     }
 
+    @GetMapping("/getResumeBySekerIdandResumeId")
+    public DataResult<Resume> getResumeBySeekerIdAndResumeId(int seekerId,int resumeId){
+        return  this.resumeService.getResumeBySeekerIdAndResumeId(seekerId,resumeId);
+    }
 
 
     @PostMapping("/add")

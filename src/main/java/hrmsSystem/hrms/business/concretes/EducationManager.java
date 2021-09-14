@@ -32,8 +32,8 @@ public class EducationManager implements EducationService {
     }
 
     @Override
-    public DataResult<List<Education>> getEducationWithResumeId(int resumeId) {
+    public DataResult<Education> getEducationWithResumeId(int resumeId) {
 
-        return new SuccessDataResult<List<Education>>(this.educationDao.findEducationByResume_ResumeId(resumeId));
+        return new SuccessDataResult<Education>(this.educationDao.findEducationByResume_ResumeId(resumeId));
     }
 }

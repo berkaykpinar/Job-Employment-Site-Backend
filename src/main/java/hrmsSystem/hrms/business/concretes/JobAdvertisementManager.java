@@ -40,8 +40,18 @@ public class JobAdvertisementManager implements JobAdvertisementService {
     }
 
     @Override
+    public DataResult<List<JobAdvertisement>> getAdListByAdId(int AdId) {
+        return new SuccessDataResult<List<JobAdvertisement>>(jobAdvertisementDao.getJobAdvertisementByAdId(AdId));
+    }
+
+    @Override
     public DataResult<List<JobAdvertisement>> listByIsApproved() {
         return new SuccessDataResult<List<JobAdvertisement>>(jobAdvertisementDao.getByIsApproved());
+    }
+
+    @Override
+    public DataResult<List<JobAdvertisement>> listbyEmployerId(int employerId) {
+        return new SuccessDataResult<List<JobAdvertisement>>(jobAdvertisementDao.findJobAdvertisementsByEmployers_Id(employerId));
     }
 
     @Override

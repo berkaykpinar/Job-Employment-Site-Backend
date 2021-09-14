@@ -50,5 +50,14 @@ public class JobAdvertisementController {
         return this.jobAdvertisementService.updateStatus(adId,status);
     }
 
+    @GetMapping("/getadlistbyAdIs")
+    public DataResult<List<JobAdvertisement>> getAdListbyAdId(int adId){
+        return this.jobAdvertisementService.getAdListByAdId(adId);
+    }
+
+    @GetMapping("/listbyEmployerId")
+    public DataResult<List<JobAdvertisement>> getAdvertisementsByEmployerId(int employerId){
+        return this.jobAdvertisementService.listbyEmployerId(employerId);
+    }
 
 }

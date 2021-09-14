@@ -12,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/skills")
+@CrossOrigin
 public class SkillsController {
     private SkillsService skillsService;
 

@@ -10,6 +10,8 @@ public interface JobAdvertisementService {
     DataResult<List<JobAdvertisement>> listByDate();
     Result add(JobAdvertisement jobAdvertisement);
     DataResult<JobAdvertisement> getByAdvertisementId(int adId);
+    DataResult<List<JobAdvertisement>> getAdListByAdId(int AdId);
     DataResult<List<JobAdvertisement>> listByIsApproved();
+    DataResult<List<JobAdvertisement>> listbyEmployerId(int employerId);
     Result updateStatus(int adId,boolean status);
 }

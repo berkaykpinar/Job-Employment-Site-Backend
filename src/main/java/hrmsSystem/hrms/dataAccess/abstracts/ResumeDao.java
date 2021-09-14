@@ -13,6 +13,10 @@ public interface ResumeDao extends JpaRepository<Resume,Integer> {
     @Query("from Resume r where r.jobSeekers.id=:seekerId")
     List<Resume> findResumeByJobSeekers_Id(int seekerId);
 
+    @Query("from Resume r where r.jobSeekers.id=:SeekerId and r.resumeId=:resumeId")
+    Resume findResumeByJobSeekers_IdAndResumeId(int SeekerId,int resumeId);
+
+
     @Query("select new hrmsSystem.hrms.entities.dtos.ResumeWithAllInformationsDto" +
             "(r.resumeId,r.jobSeekers.id,r.gitHubAddress,r.linkedinAddress,r.coverLetter,e.workplace,e.position,e.startYear,e.quitYear,e.experinceYear,e.isContinues," +
             "ed.schoolName,ed.department,ed.startYear,ed.graduateYear,ed.isContinues,l.language,l.languageLevel," +

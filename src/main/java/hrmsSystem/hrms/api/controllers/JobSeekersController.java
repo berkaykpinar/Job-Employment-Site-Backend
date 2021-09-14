@@ -27,7 +27,7 @@ public class JobSeekersController {
         return this.jobSeekerService.getAll();
     }
     @GetMapping("/getByUserId")
-    public DataResult<List<JobSeekers>> getByUserId(int userId) {
+    public DataResult<JobSeekers> getByUserId(int userId) {
 
         return this.jobSeekerService.getJobSeekerByUserId(userId);
     }

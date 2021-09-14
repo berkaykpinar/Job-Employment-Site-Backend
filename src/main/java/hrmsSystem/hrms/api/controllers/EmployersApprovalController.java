@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/approval")
+@CrossOrigin
 public class EmployersApprovalController {
     private EmployerApprovalService employerApprovalService;
 

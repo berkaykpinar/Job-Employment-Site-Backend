@@ -9,5 +9,5 @@ import java.util.List;
 public interface JobSeekerDao extends JpaRepository<JobSeekers,Integer> {
 
     @Query("from JobSeekers j where j.id=:userId")
-    List<JobSeekers> findJobSeekersById(int userId);
+    JobSeekers findJobSeekersById(int userId);
 }

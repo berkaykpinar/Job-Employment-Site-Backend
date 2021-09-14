@@ -10,5 +10,5 @@ public interface EducationService {
     DataResult<List<Education>> getAll();
     Result add(Education education);
 
-    DataResult<List<Education>> getEducationWithResumeId(int resumeId);
+    DataResult<Education> getEducationWithResumeId(int resumeId);
 }

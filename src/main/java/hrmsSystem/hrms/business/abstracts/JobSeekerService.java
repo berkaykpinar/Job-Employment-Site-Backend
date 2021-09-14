@@ -9,5 +9,5 @@ import java.util.List;
 public interface JobSeekerService {
     DataResult<List<JobSeekers>> getAll();
     Result add(JobSeekers jobSeekers);
-    DataResult<List<JobSeekers>> getJobSeekerByUserId(int userId);
+    DataResult<JobSeekers> getJobSeekerByUserId(int userId);
 }

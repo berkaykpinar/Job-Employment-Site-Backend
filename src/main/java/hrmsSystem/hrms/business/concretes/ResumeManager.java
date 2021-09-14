@@ -31,12 +31,17 @@ public class ResumeManager implements ResumeService {
     @Override
     public Result add(Resume resume) {
         this.resumeDao.save(resume);
-        return new SuccessResult();
+        return new SuccessResult(""+resume.getResumeId());
     }
 
     @Override
     public DataResult<List<Resume>> getResumeByJobSeekerId(int jobSeekerId) {
         return new SuccessDataResult<List<Resume>>(this.resumeDao.findResumeByJobSeekers_Id(jobSeekerId));
+    }
+
+    @Override
+    public DataResult<Resume> getResumeBySeekerIdAndResumeId(int jobseekerId, int resumeId) {
+        return new SuccessDataResult<Resume>(this.resumeDao.findResumeByJobSeekers_IdAndResumeId(jobseekerId,resumeId));
     }
 
     @Override
