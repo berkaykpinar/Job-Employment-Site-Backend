@@ -59,5 +59,9 @@ public class JobAdvertisementController {
     public DataResult<List<JobAdvertisement>> getAdvertisementsByEmployerId(int employerId){
         return this.jobAdvertisementService.listbyEmployerId(employerId);
     }
+    @GetMapping("/listApprovedAds")
+    public DataResult<List<JobAdvertisement>> getApprovedAds(){
+        return this.jobAdvertisementService.listApprovedAds();
+    }
 
 }

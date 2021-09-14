@@ -55,6 +55,11 @@ public class JobAdvertisementManager implements JobAdvertisementService {
     }
 
     @Override
+    public DataResult<List<JobAdvertisement>> listApprovedAds() {
+        return new SuccessDataResult<List<JobAdvertisement>>(jobAdvertisementDao.getApprovedAdvertisements());
+    }
+
+    @Override
     public Result updateStatus(int adId,boolean status) {
         this.jobAdvertisementDao.updateStatus(adId,status);
         return new SuccessResult(adId+" number advertisement succesfully approved");

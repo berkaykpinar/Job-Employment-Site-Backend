@@ -1,6 +1,7 @@
 package hrmsSystem.hrms.dataAccess.abstracts;
 
 import hrmsSystem.hrms.core.utilities.results.DataResult;
+import hrmsSystem.hrms.entities.concretes.JobApplications;
 import hrmsSystem.hrms.entities.concretes.Resume;
 import hrmsSystem.hrms.entities.dtos.ResumeWithAllInformationsDto;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -16,6 +17,8 @@ public interface ResumeDao extends JpaRepository<Resume,Integer> {
     @Query("from Resume r where r.jobSeekers.id=:SeekerId and r.resumeId=:resumeId")
     Resume findResumeByJobSeekers_IdAndResumeId(int SeekerId,int resumeId);
 
+    List<JobApplications> getByResumeId(int resumeId);
+
 
     @Query("select new hrmsSystem.hrms.entities.dtos.ResumeWithAllInformationsDto" +
             "(r.resumeId,r.jobSeekers.id,r.gitHubAddress,r.linkedinAddress,r.coverLetter,e.workplace,e.position,e.startYear,e.quitYear,e.experinceYear,e.isContinues," +
@@ -23,6 +26,7 @@ public interface ResumeDao extends JpaRepository<Resume,Integer> {
             "s.skillName,s.skillLevel) from Resume r " +
             "inner join r.experiences e inner join r.educations ed inner join r.languages l inner join r.skills s where r.jobSeekers.id=:jobSeekerId")
     List<ResumeWithAllInformationsDto> getResumesByJobSeekers_Id(int jobSeekerId);
+
 
 
 

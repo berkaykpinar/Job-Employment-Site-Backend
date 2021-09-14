@@ -13,5 +13,6 @@ public interface JobAdvertisementService {
     DataResult<List<JobAdvertisement>> getAdListByAdId(int AdId);
     DataResult<List<JobAdvertisement>> listByIsApproved();
     DataResult<List<JobAdvertisement>> listbyEmployerId(int employerId);
+    DataResult<List<JobAdvertisement>> listApprovedAds();
     Result updateStatus(int adId,boolean status);
 }

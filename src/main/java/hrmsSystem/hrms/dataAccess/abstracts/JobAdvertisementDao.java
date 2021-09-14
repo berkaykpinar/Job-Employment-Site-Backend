@@ -20,6 +20,9 @@ public interface JobAdvertisementDao extends JpaRepository<JobAdvertisement,Inte
 
     List<JobAdvertisement> getJobAdvertisementByAdId(int adId);
 
+    @Query("from JobAdvertisement where isApproved=true")
+    List<JobAdvertisement> getApprovedAdvertisements();
+
     @Query("From JobAdvertisement where isApproved=false")
     List<JobAdvertisement> getByIsApproved();
 

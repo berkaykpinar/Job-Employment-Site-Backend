@@ -1,18 +1,21 @@
 package hrmsSystem.hrms.entities.concretes;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "job_advertisement")
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler","jobApplications"})
 public class JobAdvertisement {
 
     @Id
@@ -61,9 +64,13 @@ public class JobAdvertisement {
     @Column(name="working_style")
     private String workingStyle;
 
+
     @ManyToOne()
     @JoinColumn(name = "employer_id")
     private Employers employers;
+
+    @OneToMany(mappedBy = "jobAdvertisement")
+    private List<JobApplications> jobApplications;
 
 
 }
