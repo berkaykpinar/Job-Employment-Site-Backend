@@ -1,5 +1,4 @@
-# HRMS-Project
-A human resource management system Project with React+Spring Boot 
+# The Backend side of the Job Employment Site Project with Spring Boot+React.js
 
 
 Database diagram
